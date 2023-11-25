@@ -11,39 +11,44 @@ public class HealthManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(healthAmount <= 0){
+        if (healthAmount <= 0)
+        {
             Application.LoadLevel(Application.loadedLevel);
             // SceneManager.LoadScene("OtherSceneName", LoadSceneMode.Additive);
         }
 
-        
-
-        if(Input.GetKeyDown(KeyCode.Return)){
-          TakeDamage(20);  
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            TakeDamage(20);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             Heal(5);
         }
     }
 
-    public void TakeDamage(float damage){
+    public void TakeDamage(float damage)
+    {
         Debug.Log("TakeDamage");
+        Debug.Log(healthBar.fillAmount);
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / 100f;
     }
 
-    public void Heal(float healingAmount){
+    public void Heal(float healingAmount)
+    {
         Debug.Log("Heal");
+        Debug.Log(healthBar.fillAmount);
         healthAmount += healingAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
-        healthBar.fillAmount = healthAmount / 100;
-        
+        healthBar.fillAmount = healthAmount / 100f;
+
     }
 }
