@@ -10,7 +10,6 @@ public class PlatformController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        transform.position = new Vector3(0, 40, 0);
     }
 
     // Update is called once per frame
