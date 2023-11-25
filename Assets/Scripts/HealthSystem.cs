@@ -15,7 +15,7 @@ public class HealthSystem : MonoBehaviour
         health += points;
         if (health > 100)
             health = 100;
-        Debug.Log("Gnammi! " + health);
+        GameObject.FindGameObjectWithTag("myHealth").GetComponentInChildren<HealthManagerScript>().Heal(points);
     }
 
     public void removeHealthPoint(float points)
@@ -24,6 +24,7 @@ public class HealthSystem : MonoBehaviour
             Destroy(gameObject);
 
         health -= points;
+        GameObject.FindGameObjectWithTag("myHealth").GetComponentInChildren<HealthManagerScript>().TakeDamage(points);
         //Debug.Log("Outch! " + health);
     }
 

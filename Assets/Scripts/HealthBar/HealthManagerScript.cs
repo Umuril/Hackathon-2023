@@ -36,16 +36,16 @@ public class HealthManagerScript : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("TakeDamage");
-        Debug.Log(healthBar.fillAmount);
+        //Debug.Log("TakeDamage");
+        //Debug.Log(healthBar.fillAmount);
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / 100f;
     }
 
     public void Heal(float healingAmount)
     {
-        Debug.Log("Heal");
-        Debug.Log(healthBar.fillAmount);
+        //Debug.Log("Heal");
+        //Debug.Log(healthBar.fillAmount);
         healthAmount += healingAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0, 100);
         healthBar.fillAmount = healthAmount / 100f;
