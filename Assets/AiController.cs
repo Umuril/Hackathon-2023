@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyAiTutorial : MonoBehaviour
 {
+    public PlatformController platformController;
     public NavMeshAgent agent;
 
     public Transform player;
@@ -34,25 +35,28 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void Update()
     {
-        Animator animator = GetComponent<Animator>();
-        //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        if (platformController.current_level >= 23)
+        {
+            Animator animator = GetComponent<Animator>();
+            //Check for sight and attack range
+            playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange)
-        {
-            animator.SetBool("isRunning", true);
-            Patroling();
-        }
-        if (playerInSightRange && !playerInAttackRange)
-        {
-            animator.SetBool("isRunning", true);
-            ChasePlayer();
-        }
-        if (playerInAttackRange && playerInSightRange)
-        {
-            animator.SetBool("isRunning", false);
-            AttackPlayer();
+            if (!playerInSightRange && !playerInAttackRange)
+            {
+                animator.SetBool("isRunning", true);
+                Patroling();
+            }
+            if (playerInSightRange && !playerInAttackRange)
+            {
+                animator.SetBool("isRunning", true);
+                ChasePlayer();
+            }
+            if (playerInAttackRange && playerInSightRange)
+            {
+                animator.SetBool("isRunning", false);
+                AttackPlayer();
+            }
         }
     }
 

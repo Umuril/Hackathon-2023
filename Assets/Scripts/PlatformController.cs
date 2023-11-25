@@ -7,7 +7,7 @@ public class PlatformController : MonoBehaviour
 {
     float y_level_limit = 25;
 
-    int current_level = 23;
+    public int current_level = 23;
 
     float timer = 15;
 
