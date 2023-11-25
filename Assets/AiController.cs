@@ -27,6 +27,9 @@ public class EnemyAiTutorial : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public float upForce = 1f;
+    public float projectileOffset = 1f;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -100,9 +103,11 @@ public class EnemyAiTutorial : MonoBehaviour
         if (!alreadyAttacked)
         {
             ///Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            Vector3 cur_position = transform.position;
+            Vector3 target_proj_position = new Vector3(cur_position.x, cur_position.y + projectileOffset, cur_position.z);
+            Rigidbody rb = Instantiate(projectile, target_proj_position, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-            rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            rb.AddForce(transform.up * upForce, ForceMode.Impulse);
             ///End of attack code
 
             alreadyAttacked = true;

@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private float targetHorizontalSpeed;
     private float horizontalSpeedVelocity;
 
+    public LogicManager LogicManager;
+
     public void Awake(){
         characterController = GetComponent<CharacterController>();
         player_input_actions_instance = new PlayerInputActions();
@@ -102,6 +104,15 @@ public class PlayerController : MonoBehaviour
     public void OnDisable(){
         player_input_actions_instance.Disable();
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            LogicManager.takeDamage(10f);
+        }
+        
     }
 
     #endregion

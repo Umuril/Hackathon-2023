@@ -57,6 +57,8 @@ public class PlayerMovement : MonoBehaviour
         air
     }
 
+    public LogicManager logicManager;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -226,5 +228,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 7)
+        {
+            logicManager.takeDamage(10f);
+        }
     }
 }
