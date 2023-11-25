@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class HealthSystem : MonoBehaviour
+public class EnemyHealthSystem : MonoBehaviour
 {
     public Text[] disableOnDie;
-
     public GameObject panel;
     public float health = 100f;
     void Start()
@@ -20,7 +19,7 @@ public class HealthSystem : MonoBehaviour
         health += points;
         if (health > 100)
             health = 100;
-        GameObject.FindGameObjectWithTag("myHealth").GetComponentInChildren<HealthManagerScript>().Heal(points);
+        GameObject.FindGameObjectWithTag("enemyHealth").GetComponentInChildren<HealthManagerScript>().Heal(points);
     }
 
     public void removeHealthPoint(float points)
@@ -37,7 +36,7 @@ public class HealthSystem : MonoBehaviour
         }
 
         health -= points;
-        GameObject.FindGameObjectWithTag("myHealth").GetComponentInChildren<HealthManagerScript>().TakeDamage(points);
+        GameObject.FindGameObjectWithTag("enemyHealth").GetComponentInChildren<HealthManagerScript>().TakeDamage(points);
         //Debug.Log("Outch! " + health);
     }
 
@@ -46,10 +45,5 @@ public class HealthSystem : MonoBehaviour
     {
         // every delta time remove health
         removeHealthPoint(2 * Time.deltaTime);
-        if (GameObject.FindGameObjectWithTag("Player").transform.position.y < -2)
-        {
-            removeHealthPoint(100);
-            //Time.timeScale = 0f;
-        }
     }
 }
