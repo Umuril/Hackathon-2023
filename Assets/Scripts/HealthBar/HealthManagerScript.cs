@@ -19,7 +19,7 @@ public class HealthManagerScript : MonoBehaviour
     {
         if (healthAmount <= 0)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            // Application.LoadLevel(Application.loadedLevel);
             // SceneManager.LoadScene("OtherSceneName", LoadSceneMode.Additive);
         }
 
