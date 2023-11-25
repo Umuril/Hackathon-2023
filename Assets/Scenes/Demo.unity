@@ -202,6 +202,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282097454}
   m_CullTransparentMesh: 1
+--- !u!1 &292543737 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6740662984214455920, guid: 0f8d597a2259e8f3fab404df0ae31079, type: 3}
+  m_PrefabInstance: {fileID: 2081238092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &326541373
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -585,11 +590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1231500527176058667, guid: 0c44540931ec75f81aed286bea0337ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000021483564
+      value: -0.0000000021483564
       objectReference: {fileID: 0}
     - target: {fileID: 1231500527176058667, guid: 0c44540931ec75f81aed286bea0337ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.02446746e-10
+      value: 1.02446746e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2109850742906033598, guid: 0c44540931ec75f81aed286bea0337ba, type: 3}
       propertyPath: m_Name
@@ -669,15 +674,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7595796981776998751, guid: 0c44540931ec75f81aed286bea0337ba, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.09252099
+      value: 0.092521
       objectReference: {fileID: 0}
     - target: {fileID: 7595796981776998751, guid: 0c44540931ec75f81aed286bea0337ba, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000016613644
+      value: -0.000000018194758
       objectReference: {fileID: 0}
     - target: {fileID: 7595796981776998751, guid: 0c44540931ec75f81aed286bea0337ba, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015437323
+      value: 0.0000000016906488
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1896,7 +1901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: disableOnDie.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: diabledOnDie.Array.data[0]
@@ -1909,11 +1914,19 @@ PrefabInstance:
     - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: disableOnDie.Array.data[0]
       value: 
-      objectReference: {fileID: 1547921545}
+      objectReference: {fileID: 1547921543}
     - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: disableOnDie.Array.data[1]
       value: 
-      objectReference: {fileID: 282097456}
+      objectReference: {fileID: 282097454}
+    - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
+      propertyPath: disableOnDie.Array.data[2]
+      value: 
+      objectReference: {fileID: 2115616037}
+    - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
+      propertyPath: disableOnDie.Array.data[3]
+      value: 
+      objectReference: {fileID: 292543737}
     - target: {fileID: 8332304471148684364, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2263,11 +2276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8458023881943846487, guid: 9c34a3caa132d1a6884fd78b5a0efda7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000021483566
+      value: -0.0000000021483566
       objectReference: {fileID: 0}
     - target: {fileID: 8458023881943846487, guid: 9c34a3caa132d1a6884fd78b5a0efda7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1.02446746e-10
+      value: 1.02446746e-10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2346,8 +2359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableOnDie:
-  - {fileID: 1547921545}
-  - {fileID: 282097456}
+  - {fileID: 1547921543}
+  - {fileID: 282097454}
+  - {fileID: 2115616037}
+  - {fileID: 292543737}
   panel: {fileID: 1710009858}
   health: 100
 --- !u!1001 &1937452336
@@ -2741,6 +2756,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f8d597a2259e8f3fab404df0ae31079, type: 3}
+--- !u!1 &2115616037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4601990749017235586, guid: 5cf486b2e66893c759a1e493a9c7ba19, type: 3}
+  m_PrefabInstance: {fileID: 1326794057}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2407770645473364878
 PrefabInstance:
   m_ObjectHideFlags: 0

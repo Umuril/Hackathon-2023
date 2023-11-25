@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 public class EnemyHealthSystem : MonoBehaviour
 {
-    public Text[] disableOnDie;
+    public GameObject[] disableOnDie;
     public GameObject panel;
     public float health = 100f;
     void Start()
@@ -28,7 +28,7 @@ public class EnemyHealthSystem : MonoBehaviour
         {
             foreach (var dis in disableOnDie)
             {
-                dis.enabled = false;
+                dis.SetActive(false);
             }
             panel.SetActive(true);
             Time.timeScale = 0f;
