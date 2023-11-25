@@ -23,7 +23,7 @@ public class HealthManagerScript : MonoBehaviour
             // SceneManager.LoadScene("OtherSceneName", LoadSceneMode.Additive);
         }
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        /*if (Input.GetKeyDown(KeyCode.Return))
         {
             TakeDamage(20);
         }
@@ -31,7 +31,7 @@ public class HealthManagerScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Heal(5);
-        }
+        }*/
     }
 
     public void TakeDamage(float damage)
