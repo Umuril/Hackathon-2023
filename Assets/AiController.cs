@@ -38,7 +38,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void Update()
     {
-        if (platformController.current_level >= 23)
+        if (platformController.current_level >= 25)
         {
             Animator animator = GetComponent<Animator>();
             //Check for sight and attack range
