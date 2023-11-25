@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -49,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
 
     public MovementState state;
+
+    public Animator animator;
     public enum MovementState
     {
         walking,
@@ -58,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public LogicManager logicManager;
+
+    public Transform player_cam;
+
+    private string current_animation = "idle";
 
     private void Start()
     {
@@ -121,6 +128,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void StateHandler()
     {
+        Debug.Log(verticalInput);
+
+        if (verticalInput > 0 && current_animation == "idle") {
+            current_animation = "running";
+            animator.Play("running");
+        } else if (verticalInput <= 0 && current_animation == "running") {
+            current_animation = "idle";
+            animator.Play("idle");
+        }
+
         // Mode - Crouching
         if (Input.GetKey(crouchKey))
         {
