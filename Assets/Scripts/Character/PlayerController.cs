@@ -19,8 +19,17 @@ public class PlayerController : MonoBehaviour
     
     [Header("Camera")]
     public Transform cameraTarget;
-    public CameraController cameraController;
+    public FuckCameraController fuckCameraController;
     
+    public float movementSmoothdamp;
+    public bool isWalking;
+    public float verticalSpeed;
+    private float targetVerticalSpeed;
+    private float verticalSpeedVelocity;
+
+    public float horizontalSpeed;
+    private float targetHorizontalSpeed;
+    private float horizontalSpeedVelocity;
 
     public void Awake(){
         characterController = GetComponent<CharacterController>();
@@ -49,18 +58,38 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Movement(){
-        Debug.Log(cameraController);
 
-        playerMovement = cameraController.transform.forward * (settings.ForwardSpeed * input_Movement.y) * Time.deltaTime;
-        playerMovement += cameraController.transform.right * (settings.ForwardSpeed * input_Movement.x) * Time.deltaTime;
+       
+        if (isTargetMode){
 
-        if (!isTargetMode){
+            if (input_Movement.y > 0){
+                targetVerticalSpeed = (isWalking ? settings.WalkingSpeed : settings.RunningSpeed);
+            } else {
+                targetVerticalSpeed = (isWalking ? settings.WalkingBackwardSpeed : settings.RunningBackwardSpeed);
+            }
+
+            targetVerticalSpeed = targetVerticalSpeed * input_Movement.y * Time.deltaTime;
+            targetHorizontalSpeed = (isWalking ? settings.WalkingSpeed : settings.RunningSpeed) * input_Movement.y * Time.deltaTime;
+
+        } else {
+
             var originalRotation = transform.rotation;
             transform.LookAt(playerMovement + transform.position, Vector3.up);
             var newRotation = transform.rotation;
 
             transform.rotation = Quaternion.Lerp(originalRotation, newRotation, settings.CharacterRotationSmoothdamp); 
+
+            targetVerticalSpeed = (isWalking ? settings.WalkingStrafingSpeed : settings.RunningStrafingSpeed) * input_Movement.y * Time.deltaTime;
+            targetHorizontalSpeed = (isWalking ? settings.WalkingStrafingSpeed : settings.RunningStrafingSpeed) * input_Movement.y * Time.deltaTime;
+
         }
+
+        verticalSpeed = Mathf.SmoothDamp(verticalSpeed, targetVerticalSpeed, ref verticalSpeedVelocity, movementSmoothdamp);
+        horizontalSpeed = Mathf.SmoothDamp(horizontalSpeed, targetHorizontalSpeed, ref horizontalSpeedVelocity, movementSmoothdamp);
+
+        playerMovement = fuckCameraController.transform.forward * verticalSpeed;
+        playerMovement += fuckCameraController.transform.right * horizontalSpeed;
+
 
         characterController.Move(playerMovement);
     }

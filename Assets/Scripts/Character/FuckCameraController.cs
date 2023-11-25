@@ -5,7 +5,11 @@ using UnityEngine;
 using System;
 using UnityEditor;
 
+<<<<<<<< HEAD:Assets/Scripts/Character/CameraController2.cs
 public class CameraController2 : MonoBehaviour
+========
+public class FuckCameraController : MonoBehaviour
+>>>>>>>> 983bcaf0a19fce5801607b187b868127bff6febc:Assets/Scripts/Character/FuckCameraController.cs
 {
     public PlayerController playerController;
 

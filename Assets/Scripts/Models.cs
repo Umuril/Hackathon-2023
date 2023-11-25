@@ -29,8 +29,19 @@ public static class Models
     [Serializable]
     public class PlayerSettingsModel{
 
-        public float ForwardSpeed = 1;
+        // public float ForwardSpeed = 1;
         public float CharacterRotationSmoothdamp = 0.6f;
+
+        [Header("Movement Speeds")]
+        public float WalkingSpeed;
+        public float RunningSpeed;
+        
+        public float WalkingBackwardSpeed;
+        public float RunningBackwardSpeed;
+
+        public float WalkingStrafingSpeed;
+        public float RunningStrafingSpeed;
+
 
     }
 
