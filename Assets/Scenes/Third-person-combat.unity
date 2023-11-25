@@ -365,7 +365,6 @@ GameObject:
   - component: {fileID: 496776464}
   - component: {fileID: 496776463}
   - component: {fileID: 496776462}
-  - component: {fileID: 496776465}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -447,26 +446,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 205186891}
   m_LocalEulerAnglesHint: {x: 27.725, y: -90, z: 0}
---- !u!114 &496776465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496776461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b1ae221f782ced2ae318bef126629f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  input_Movement: {x: 0, y: 0}
-  input_View: {x: 0, y: 0}
-  settings:
-    ForwardSpeed: 1
-    CharacterRotationSmoothdamp: 0.6
-  isTargetMode: 0
-  cameraTarget: {fileID: 0}
-  fuckCameraController: {fileID: 0}
 --- !u!1 &971750305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a88ec72ca13618e5aafeaa737b227095, type: 3}
@@ -492,11 +471,18 @@ MonoBehaviour:
   input_Movement: {x: 0, y: 0}
   input_View: {x: 0, y: 0}
   settings:
-    ForwardSpeed: 1
     CharacterRotationSmoothdamp: 0.6
+    WalkingSpeed: 3
+    RunningSpeed: 8
+    WalkingBackwardSpeed: 1
+    RunningBackwardSpeed: 3
+    WalkingStrafingSpeed: 2
+    RunningStrafingSpeed: 4
   isTargetMode: 1
   cameraTarget: {fileID: 1281088946}
   fuckCameraController: {fileID: 2092718280}
+  movementSmoothdamp: 0.4
+  isWalking: 0
 --- !u!143 &971750308
 CharacterController:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 using System;
 using UnityEditor;
 
-public class CameraController : MonoBehaviour
+public class FuckCameraController : MonoBehaviour
 {
     public PlayerController playerController;
 
