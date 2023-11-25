@@ -34,13 +34,22 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void Update()
     {
+        Animator animator = GetComponent<Animator>();
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange) AttackPlayer();
+        if (playerInSightRange && !playerInAttackRange)
+        {
+            ChasePlayer();
+            //animator.SetBool("isRunning", true);
+        }
+        if (playerInAttackRange && playerInSightRange)
+        { 
+            AttackPlayer();
+            //animator.SetBool("isRunning", false);
+        }
     }
 
     private void Patroling()
