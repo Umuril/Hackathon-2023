@@ -1720,12 +1720,10 @@ PrefabInstance:
       propertyPath: sprintSpeed
       value: 5
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 3263805834382965749, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: logicManager
       value: 
       objectReference: {fileID: 330571724}
-=======
     - target: {fileID: 6931680742451470097, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: panel
       value: 
@@ -1754,7 +1752,6 @@ PrefabInstance:
       propertyPath: disableOnDie.Array.data[1]
       value: 
       objectReference: {fileID: 282097456}
->>>>>>> 5468c5c3111b42ab1a98ac9837b7589e94df541f
     - target: {fileID: 8332304471148684364, guid: f8792c83f1a96c2d48afee554a85c717, type: 3}
       propertyPath: m_Name
       value: Player
