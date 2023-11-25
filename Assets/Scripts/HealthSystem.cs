@@ -31,7 +31,7 @@ public class HealthSystem : MonoBehaviour
             {
                 dis.enabled = false;
             }
-            panel.active = true;
+            panel.SetActive(true);
             Time.timeScale = 0f;
             //Destroy(gameObject);
         }
