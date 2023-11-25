@@ -5,7 +5,7 @@ using UnityEngine;
 using System;
 using UnityEditor;
 
-public class CameraController : MonoBehaviour
+public class CameraController2 : MonoBehaviour
 {
     public PlayerController playerController;
 
