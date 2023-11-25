@@ -563,6 +563,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1841319015 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6305960511496971306, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+  m_PrefabInstance: {fileID: 3732765026583475302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1841319020
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841319015}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &2141493390 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7328405391269503255, guid: 09fe45ce15e87d14cb7edf98dd93d4c0, type: 3}
@@ -686,10 +713,65 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2141493394}
+    - target: {fileID: 6435849777992309137, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685757474699132560, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685757474699132560, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685757474699132560, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: agent
+      value: 
+      objectReference: {fileID: 1841319020}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2141493394}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 5174328939123421684, guid: 77ed796b2e2efb941923187e42c68309, type: 3}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: sightRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721007911702316627, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      propertyPath: whatIsPlayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6305960511496971306, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1841319020}
   m_SourcePrefab: {fileID: 100100000, guid: 957fb6520171ceb43ac855eda8f46fff, type: 3}
 --- !u!1001 &7250425716212691589
 PrefabInstance:
@@ -743,6 +825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavMesh
       objectReference: {fileID: 0}
+    - target: {fileID: 3038490270474115850, guid: 0b7e490116ac5ca4b870d4c8feb69a6f, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: db39aa54b187e1046b8022147090eb70, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
