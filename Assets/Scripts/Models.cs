@@ -4,9 +4,9 @@ using UnityEngine;
 public static class Models
 {
 
-    #region - Player -
+    #region - Camera -
     [Serializable]
-    public class PlayerSettingsModel{
+    public class CameraSettingsModel{
 
         [Header("Camera Settings")]
         public float SensitivityX;
@@ -17,6 +17,20 @@ public static class Models
         
         public float YClampMin = -40f;
         public float YClampMax = 40f; 
+
+        [Header("Character")]
+        public float CharacterRotationSmoothdamp = 1f;
+
+    }
+
+    #endregion
+
+        #region - Player -
+    [Serializable]
+    public class PlayerSettingsModel{
+
+        public float ForwardSpeed = 1;
+        public float CharacterRotationSmoothdamp = 0.6f;
 
     }
 
